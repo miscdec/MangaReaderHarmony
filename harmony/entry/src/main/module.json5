@@ -1,0 +1,68 @@
+{
+  "module": {
+    "metadata": [
+      {
+        "name": "ExecuteArkTSLinter",
+        "value": "false"
+      },
+      {
+        "name": "OPTLazyForEach",
+        "value": "true"
+      }
+    ],
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      },
+      {
+        "name": "ohos.permission.ACCELEROMETER",
+        "reason": "$string:use_your_accelerometer"
+      }
+//      {
+//        "name": "ohos.permission.ACCESS_BUNDLE_DIR"
+//      },
+//      {
+//        "name": "ohos.permission.READ_MEDIA",
+//        "reason": "$string:module_desc",
+//        "usedScene": {
+//          "when": "always",
+//          "abilities": ["EntryAbility.ets"]
+//        }
+//      }
+    ],
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:bootsplash_logo",
+        "startWindowBackground": "$color:bootsplash_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

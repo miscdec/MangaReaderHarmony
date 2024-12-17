@@ -1,0 +1,30 @@
+{
+  "license": "",
+  "devDependencies": {},
+  "author": "",
+  "name": "entry",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "version": "1.0.0",
+  "dependencies": {
+    "@rnoh/react-native-openharmony": "file:../../node_modules/@react-native-oh/react-native-harmony/react_native_openharmony.har",
+    "@react-native-oh-tpl/react-native-bootsplash": "file:../../node_modules/@react-native-oh-tpl/react-native-bootsplash/harmony/boot_splash.har",
+    "@react-native-oh-tpl/async-storage": "file:../../node_modules/@react-native-oh-tpl/async-storage/harmony/async_storage.har",
+    "@react-native-oh-tpl/camera-roll": "file:../../node_modules/@react-native-oh-tpl/camera-roll/harmony/camera_roll.har",
+    "@react-native-oh-tpl/cookies": "file:../../node_modules/@react-native-oh-tpl/cookies/harmony/rn_cookies.har",
+    "@react-native-oh-tpl/flash-list": "file:../../node_modules/@react-native-oh-tpl/flash-list/harmony/flash_list.har",
+    "@react-native-oh-tpl/react-native-document-picker": "file:../../node_modules/@react-native-oh-tpl/react-native-document-picker/harmony/document_picker.har",
+    "@react-native-oh-tpl/react-native-fast-image": "file:../../node_modules/@react-native-oh-tpl/react-native-fast-image/harmony/fast_image.har",
+    "@react-native-oh-tpl/react-native-safe-area-context": "file:../../node_modules/@react-native-oh-tpl/react-native-safe-area-context/harmony/safe_area.har",
+    "@react-native-oh-tpl/react-native-share": "file:../../node_modules/@react-native-oh-tpl/react-native-share/harmony/react_native_share.har",
+    "@react-native-oh-tpl/react-native-svg": "file:../../node_modules/@react-native-oh-tpl/react-native-svg/harmony/svg.har",
+    "@react-native-oh-tpl/react-native-webview": "file:../../node_modules/@react-native-oh-tpl/react-native-webview/harmony/rn_webview.har",
+    "@react-native-oh-tpl/react-native-gesture-handler": "file:../../node_modules/@react-native-oh-tpl/react-native-gesture-handler/harmony/gesture_handler.har",
+    "@react-native-oh-tpl/react-native-reanimated": "file:../../node_modules/@react-native-oh-tpl/react-native-reanimated/harmony/reanimated.har",
+    "@react-native-oh-tpl/react-native-file-access": "file:../../node_modules/@react-native-oh-tpl/react-native-file-access/harmony/file_access.har",
+    "@react-native-oh-tpl/react-native-pager-view": "file:../../node_modules/@react-native-oh-tpl/react-native-pager-view/harmony/pager_view.har",
+    "@react-native-oh-tpl/react-native-quick-base64": "file:../../node_modules/@react-native-oh-tpl/react-native-quick-base64/harmony/rn_quick_base64.har"
+
+  }
+
+}

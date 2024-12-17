@@ -1,0 +1,61 @@
+{
+  "apiType": "stageMode",
+  "buildOption": {
+    "arkOptions": {
+      // "apPath": "./modules.ap"  /* Profile used for profile-guided optimization (PGO), a compiler optimization technique to improve app runtime performance. */
+    },
+    "externalNativeOptions": {
+      "path": "./src/main/cpp/CMakeLists.txt",
+      "arguments": "",
+      "cppFlags": "",
+    },
+    "sourceOption": {
+      "workers": [
+        "./src/main/ets/workers/RNOHWorker.ets"
+      ]
+    }
+  },
+  "buildOptionSet": [
+    {
+      "name": "release",
+      "arkOptions": {
+        "obfuscation": {
+          "ruleOptions": {
+            "enable": false,
+            "files": [
+              "./obfuscation-rules.txt"
+            ]
+          }
+        }
+      },
+      "externalNativeOptions": {
+        "path": "./src/main/cpp/CMakeLists.txt",
+        // 自定义cmake配置脚本CMakeLists.txt的位置，它是以模块根目录为起始位置的相对路径
+        //        "arguments": ["-DCMAKE_BUILD_TYPE=Release"], // hvigor将会把此处的自定义参数传递给cmake构建工具，您可通过cmake官方文档查找您所需的编译参数，同时它也将覆盖默认同名参数
+        //        "cppFlags": "-g", // 自定义cpp flags参数
+        "abiFilters": [
+          "arm64-v8a",
+          "x86_64"
+        ]
+        // 自定义cpp编译架构，默认编译架构为arm64-v8a
+      },
+      "nativeLib": {
+        "debugSymbol": {
+          // 可通过此配置对cpp编译产物so执行strip，移除so中的调试信息与符号表等
+          "strip": false,
+          // 执行strip
+          "exclude": []
+          //执行strip的过滤正则表达式规则
+        },
+      }
+    },
+  ],
+  "targets": [
+    {
+      "name": "default",
+    },
+    {
+      "name": "ohosTest",
+    }
+  ]
+}
