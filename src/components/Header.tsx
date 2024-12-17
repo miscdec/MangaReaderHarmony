@@ -1,11 +1,11 @@
 import React, { Fragment, useMemo } from 'react';
 import { StatusBar, HStack, Text, useTheme } from 'native-base';
-import { NativeStackHeaderProps } from '@react-navigation/native-stack';
+import { StackHeaderProps } from '@react-native-oh-tpl/stack';
 import { getHeaderTitle } from '@react-navigation/elements';
 import VectorIcon from '~/components/VectorIcon';
 import Shake from '~/components/Shake';
 
-interface HeaderProps extends NativeStackHeaderProps {
+interface HeaderProps extends StackHeaderProps {
   enableShake?: boolean;
 }
 

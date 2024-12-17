@@ -36,7 +36,7 @@ import { CacheManager } from '@georstat/react-native-image-cache';
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
 import DocumentPicker, { DocumentPickerResponse } from 'react-native-document-picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import base64 from 'base-64';
+// import base64 from 'base-64';
 import dayjs from 'dayjs';
 import Share from 'react-native-share';
 
@@ -306,7 +306,7 @@ function* backupSaga() {
         record[key] = { ...rootState.dict.record[key], progress: 0, imagesLoaded: [] };
       }
 
-      const data = base64.encode(
+      const data = atob(
         encodeURIComponent(JSON.stringify({ ...rootState, dict: { ...rootState.dict, record } }))
       );
       const filename = 'MangaReader备份数据' + dayjs().format('YYYY-MM-DD');
@@ -338,7 +338,7 @@ function* restoreSaga() {
       const res: DocumentPickerResponse = yield call(DocumentPicker.pickSingle);
       const source: string = yield call(FileSystem.readFile, res.uri, 'base64');
       const data = JSON.parse(
-        decodeURIComponent(base64.decode(source.replace('datatext/plainbase64', '')))
+        decodeURIComponent(btoa(source.replace('datatext/plainbase64', '')))
       );
 
       if (!validate(data, rootSchema, initialState)) {

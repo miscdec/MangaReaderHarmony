@@ -1,6 +1,6 @@
 import '~/utils/define';
 import { CacheManager } from '@georstat/react-native-image-cache';
-import { AppRegistry } from 'react-native';
+import { AppRegistry,Platform } from 'react-native';
 import { Dirs } from 'react-native-file-access';
 import { name } from './app.json';
 import dayjs from 'dayjs';
@@ -19,6 +19,7 @@ dayjs.locale('zh-cn');
 process.env.NAME = name;
 process.env.VERSION = 'v' + packageJson.version;
 process.env.PUBLISH_TIME = packageJson.publishTime;
+appName = "MangaReader"
 
 CacheManager.config = {
   baseDir: `${Dirs.CacheDir}/images_cache/`,
@@ -27,4 +28,6 @@ CacheManager.config = {
   thumbnailAnimationDuration: 500,
 };
 
-AppRegistry.registerComponent(name, () => App);
+// console.info(`getCacheDir data: ${JSON.stringify(Dirs.CacheDir)}`);
+// console.info(`system is ${Platform.OS}:${Platform.Version},isAndroid:${Platform.OS.toString().includes("harmony") || Platform.OS.toString().includes("Android")}`)
+AppRegistry.registerComponent(appName, () => App);

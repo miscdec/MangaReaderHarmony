@@ -4,8 +4,8 @@ import { ImageState } from '~/components/ComicImage';
 type CacheMap = Record<string, ImageState>;
 
 class Cache {
-  private _basePath = `${Dirs.DocumentDir}/@cache`; // 或者Dirs.CacheDir？
-  private _path: string;
+  private _basePath = `${Dirs.CacheDir}/@cache`; // 或者Dirs.CacheDir？
+  private readonly _path: string;
   private _cacheMap: CacheMap = {};
 
   constructor(identification: string) {
@@ -48,7 +48,7 @@ class Cache {
 
   // 清除缓存
   static async clearCache() {
-    const basePath = `${Dirs.DocumentDir}/@cache`;
+    const basePath = `${Dirs.CacheDir}/@cache`;
     try {
       const dirExists = await FileSystem.exists(basePath);
       if (dirExists) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { createNativeStackNavigator, NativeStackHeaderProps } from '@react-navigation/native-stack';
+import { createStackNavigator, StackHeaderProps } from '@react-native-oh-tpl/stack';
 import { navigationRef, customTheme, AsyncStatus } from '~/utils';
 import { HeartAndBrowser, PrehandleDrawer } from '~/views/Detail';
 import { SearchAndPlugin, PluginSelect } from '~/views/Discovery';
@@ -30,7 +30,7 @@ const Webview = loadable(() => import('~/views/Webview'));
 const About = loadable(() => import('~/views/About'));
 
 const styles = StyleSheet.create({ wrapper: { flex: 1 } });
-const { Navigator, Screen } = createNativeStackNavigator<RootStackParamList>();
+const { Navigator, Screen } = createStackNavigator<RootStackParamList>();
 
 const NavigationScreen = ({ ready = false }: NavigationScreenProps) => {
   const launchStatus = useAppSelector((state) => state.app.launchStatus);
@@ -38,7 +38,7 @@ const NavigationScreen = ({ ready = false }: NavigationScreenProps) => {
   const haveUpdate = Boolean(latestRelease);
 
   const DefaultHeader = useCallback(
-    (props: NativeStackHeaderProps) => <Header {...props} enableShake={haveUpdate} />,
+    (props: StackHeaderProps) => <Header {...props} enableShake={haveUpdate} />,
     [haveUpdate]
   );
 

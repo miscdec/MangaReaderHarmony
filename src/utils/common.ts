@@ -7,7 +7,7 @@ import { Buffer } from 'buffer';
 import CookieManager from '@react-native-cookies/cookies';
 import queryString from 'query-string';
 import CryptoJS from 'crypto-js';
-import base64 from 'base-64';
+// import base64 from 'base-64';
 import md5 from 'blueimp-md5';
 
 export const PATTERN_VERSION = /v?([0-9]+)\.([0-9]+)\.([0-9]+)/;
@@ -347,7 +347,7 @@ export function unscrambleRM5(uri: string, width: number, height: number) {
   const list = uri.split('/');
   const id = list[list.length - 1].replace('.jpg', '');
 
-  const buffer = Buffer.from(CryptoJS.MD5(base64.decode(id)).toString(), 'hex');
+  const buffer = Buffer.from(CryptoJS.MD5(btoa(id)).toString(), 'hex');
   const nub = buffer[buffer.length - 1];
   const numSplit = (nub % 10) + 5;
   const perheight = height % numSplit;

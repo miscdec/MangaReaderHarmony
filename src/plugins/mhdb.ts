@@ -1,6 +1,6 @@
 import Base, { Plugin, Options } from './base';
 import { MangaStatus, ErrorMessage } from '~/utils';
-import base64 from 'base-64';
+// import base64 from 'base-64';
 import * as cheerio from 'cheerio';
 
 const discoveryOptions = [
@@ -334,7 +334,7 @@ class ManHuaDB extends Base {
     const script =
       ($('script:not([src]):not([type])').get(2) as cheerio.TagElement).children[0].data || '';
     const [, scriptContent] = script.match(PATTERN_SCRIPT) || [];
-    const images: { img: string; p: number }[] = JSON.parse(base64.decode(scriptContent));
+    const images: { img: string; p: number }[] = JSON.parse(btoa(scriptContent));
 
     return {
       canLoadMore: false,
