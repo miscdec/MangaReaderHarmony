@@ -5,7 +5,10 @@
 ![license](https://img.shields.io/github/license/youniaogu/MangaReader)
 ![issues](https://img.shields.io/github/issues-raw/youniaogu/MangaReader)
 
-一个漫画 APP📱，基于 react-native 构建，兼容 Android、Ios，尽可能适配平板
+一个漫画 APP📱，基于 react-native 构建，兼容 Android、Ios、OHOS，尽可能适配平板
+
+注意：目前加载图片的场景存在较为严重的性能问题，无法日用！！！由于我没有真机，无法使用IDE的Trace进行分析，所以我咕咕了，蹲一个有真机的来修§(*￣▽￣*)§
+音量键翻页由于使用的库尚未适配OHOS，所以相关代码被我注释了。
 
 - 插件式设计、近十个可用[插件](#插件)
 - 收藏、搜索、批量更新、下载、导出
